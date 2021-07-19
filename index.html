@@ -14,6 +14,15 @@
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/estilo.css" />
   <link rel="icon" href="img/logo.png" width="40px" height="40px">
+  <script>
+    var userEmail;
+
+    function gravar() {
+      userEmail = document.getElementById("email").value;
+      localStorage.email = userEmail;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -204,9 +213,10 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control" placeholder="E-mail" required>
+                  <input name="email" id="email" type="email" class="form-control" placeholder="E-mail" required>
                 </div>
-                <button class="btn btn-lg btn-info btn-block" type="submit">Registrar</button>
+                <button id="button" onclick="gravar()" class="btn btn-lg btn-info btn-block"
+                  type="submit">Registrar</button>
               </form>
             </div>
           </div>
@@ -248,6 +258,8 @@
       </div>
     </div>
   </footer>
+
+
 
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
   <script src="js/jquery.min.js"></script>
